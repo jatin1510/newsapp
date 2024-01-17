@@ -5,14 +5,14 @@ import News from "./components/News";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 export default class App extends Component {
-  pageSize = 4;
+  pageSize = 8;
   render() {
     return (
       <Router>
       <div>
         <Navbar/>
         <Routes>
-        <Route exact path="/" element={<News key="general" pageSize={this.pageSize} country='in' category='general'/>} /> 
+        <Route exact path="/" element={<News key="generalHome" pageSize={this.pageSize} country='in' category='general'/>} /> 
         <Route exact path="/business" element={<News key="business" pageSize={this.pageSize} country='in' category='business'/>} /> 
         <Route exact path="/entertainment" element={<News key="entertainment" pageSize={this.pageSize} country='in' category='entertainment'/>} /> 
         <Route exact path="/general" element={<News key="general" pageSize={this.pageSize} country='in' category='general'/>} /> 
