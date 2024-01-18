@@ -129,7 +129,7 @@ export class News extends Component {
     const url = `https://newsapi.org/v2/top-headlines?country=${this.state.country}&category=${this.state.category}&apiKey=${this.state.apiKey}&page=${this.state.page + 1}&pagesize=${this.state.pageSize}`;
     let data = await fetch(url);
     let parsedData = await data.json();
-    await this.setState({
+    this.setState({
       articles: this.state.articles.concat(parsedData.articles),
       totalResults: parsedData.totalResults,
       page: this.state.page + 1
@@ -139,7 +139,7 @@ export class News extends Component {
   render() {
     return (
       <>
-        <h1 className="text-center my-4">
+        <h1 className="text-center" style={{marginTop: '85px'}}>
           NewsMonkey - Top {this.capitalizeIthCharacter(this.props.category)}{" "}
           Headlines
         </h1>
